@@ -1,0 +1,79 @@
+<!-- app_usuarios/templates/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios de Netflix</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #141414; /* Fondo oscuro de Netflix */
+            color: #e5e5e5; /* Texto gris claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #e50914; /* Rojo Netflix */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        table {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra más pronunciada */
+            background-color: #222222; /* Fondo de tabla oscuro */
+            border-radius: 8px;
+            overflow: hidden; /* Para que los bordes redondeados se apliquen al contenido */
+        }
+        th, td {
+            padding: 15px 20px;
+            border: 1px solid #444444; /* Bordes más oscuros */
+            text-align: left;
+        }
+        th {
+            background-color: #303030; /* Fondo de encabezado ligeramente más claro */
+            color: #e50914; /* Rojo Netflix para encabezados */
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #2a2a2a; /* Filas pares un poco más claras */
+        }
+        tr:hover {
+            background-color: #383838; /* Efecto hover */
+        }
+        td {
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Usuarios Registrados en Netflix Alexys Leal 0624</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.telefono }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
